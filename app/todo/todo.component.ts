@@ -8,18 +8,37 @@ import { TodoService }  from './todo.service';
 })
 export class TodoComponent implements OnInit {
 
+    /**Constructore */
     constructor(
         private todoService: TodoService
     ) { }
-    todos_list = this.todoService.getTodos();
 
+    /** Variable declation */
+    displayEditTextbox = false;
+    selectedTodo: TodoClass;
+    todosList = new Array;
 
+    /** ngOnInit function */
     ngOnInit(): void {
+        //Call getTodos service
+        this.todosList = this.todoService.getTodos();
     }
 
-    selectedTodo:TodoClass;           
+    /** onSelect function */
+    onSelect(todo: TodoClass) {
+        this.selectedTodo = todo;
+        this.displayEditTextbox = true;
+    }
 
-    onSelect(todo:TodoClass){
-        this.selectedTodo=todo;
+    /** updateTodo function */
+    updateTodo() {
+        //Call updateTodo service
+        this.todoService.updateTodo(this.selectedTodo);
+        this.displayEditTextbox = false;
+    }
+
+    deleteTodo(todo:TodoClass){
+        //Call deleteTodo service
+        this.todoService.deleteTodo(todo);
     }
 }

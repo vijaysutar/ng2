@@ -1,9 +1,12 @@
-<div *ngIf="selectedTodo">
-    
-    <input [(ngModel)]="selectedTodo.name" placeholder="Name"/>     
+
+
+<div *ngIf="displayEditTextbox">
+    <input [(ngModel)]="selectedTodo.name" placeholder="Name"/>
+    <button (click)="updateTodo()">Save</button>     
 </div>
 <ul class="heroes">
-    <li *ngFor="let todo of todos_list" (click)="onSelect(todo)">
-        <span class="badge">{{todo.id}}</span> {{todo.name}}
+    <li *ngFor="let todo of todosList">
+        <span class="badge"  (click)="onSelect(todo)" > {{todo.name}}</span>
+        <span (click)="deleteTodo(todo)" class="delete">X</span>
     </li>
 </ul>
