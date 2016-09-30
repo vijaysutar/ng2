@@ -11,10 +11,15 @@ export class TodoComponent implements OnInit {
     constructor(
         private todoService: TodoService
     ) { }
-
     todos_list = this.todoService.getTodos();
-    title = 'Hello This is tiel';
-    ngOnInit(): void {
 
+
+    ngOnInit(): void {
+    }
+
+    selectedTodo:TodoClass;           
+
+    onSelect(todo:TodoClass){
+        this.selectedTodo=todo;
     }
 }
