@@ -10,7 +10,7 @@ import { TodoService }  from './todo/todo.service';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     AppComponent,
