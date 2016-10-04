@@ -3,9 +3,6 @@
     <button (click)="addTodo()">Add</button>
 </div>
 
-
-
-
 <div *ngIf="displayEditTextbox">
     <input [(ngModel)]="selectedTodo.name" placeholder="Name"/>
     <button (click)="updateTodo()">Save</button>     

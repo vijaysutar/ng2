@@ -3,8 +3,9 @@ import { TodoClass }  from './todo';
 import { TodoService }  from './todo.service';
 
 @Component({
+    moduleId: module.id,
     selector: 'todo',
-    templateUrl: './app/todo/todo.component.html'
+    templateUrl: './todo.component.html'
 })
 export class TodoComponent implements OnInit {
 
