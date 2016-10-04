@@ -22,10 +22,20 @@ export class TodoService {
         return this.TODOS;
     }
 
+    /** Add todo */
+    addTodo(todoName: string) {
+        let n = this.TODOS.length;
+        this.TODOS.push({
+            id: n + 1,
+            name: todoName
+        });
+    }
+
+
     /**updateTodo function */
     updateTodo(todo: TodoClass) {
-        var n = this.TODOS.length;
-        for (var i = 0; i < n; i++) {
+        let n = this.TODOS.length;
+        for (let i = 0; i < n; i++) {
             if (this.TODOS[i].id == todo.id) {
                 this.TODOS[i].name = todo.name;
             }

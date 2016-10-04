@@ -8,19 +8,22 @@ import { TodoService }  from './todo.service';
 })
 export class TodoComponent implements OnInit {
 
+    /** Variable declation */
+    displayEditTextbox: boolean;
+    selectedTodo: TodoClass;
+    todosList = new Array;
+    newTodo: string;
+
     /**Constructore */
     constructor(
         private todoService: TodoService
-    ) { }
-
-    /** Variable declation */
-    displayEditTextbox = false;
-    selectedTodo: TodoClass;
-    todosList = new Array;
+    ) {
+         this.displayEditTextbox = false;
+    }
 
     /** ngOnInit function */
     ngOnInit(): void {
-        //Call getTodos service
+        // Call getTodos service
         this.todosList = this.todoService.getTodos();
     }
 
@@ -30,15 +33,22 @@ export class TodoComponent implements OnInit {
         this.displayEditTextbox = true;
     }
 
+    /** Add todo */
+    addTodo() {
+        this.todoService.addTodo(this.newTodo);
+    }
+
     /** updateTodo function */
     updateTodo() {
-        //Call updateTodo service
+        // Call updateTodo service
         this.todoService.updateTodo(this.selectedTodo);
         this.displayEditTextbox = false;
     }
 
-    deleteTodo(todo:TodoClass){
-        //Call deleteTodo service
+    // Delete todo
+    deleteTodo(todo:TodoClass) {
+        // Call deleteTodo service
         this.todoService.deleteTodo(todo);
     }
+
 }
