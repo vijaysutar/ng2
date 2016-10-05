@@ -1,4 +1,22 @@
 <!--<todo></todo>-->
-<h1>Welcome to TODO</h1>
-<a routerLink="/todo/list">Todo List</a>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/">TODO</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="/">Home</a></li>
+      <li><a routerLink="/todo/list">Todo List</a></li>
+      <li><a routerLink="/todo/add">Add New Todo</a></li> 
+    </ul>
+  </div>
+</nav>
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            <p>Welcome to the site of TODO</p>
+        </div>
+    </div>
+</div>
+<!--<a routerLink="/todo/list">Todo List</a>-->
 <router-outlet></router-outlet>

@@ -8,7 +8,7 @@ import { HomeComponent } from './home.component';
 const appRoutes: Routes = [
     {
         path: '',
-        component: AppComponent
+        component: HomeComponent
     },
     {
         path: 'todo/list',
