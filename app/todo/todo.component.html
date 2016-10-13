@@ -7,7 +7,7 @@
     <input [(ngModel)]="selectedTodo.name" placeholder="Name"/>
     <button (click)="updateTodo()">Save</button>     
 </div>
-<ul class="heroes">
+<ul class="heroes" *ngIf="action==listTodo">
     <li *ngFor="let todo of todosList">
         <span class="badge"  (click)="onSelect(todo)" > {{todo.name}}</span>
         <span (click)="deleteTodo(todo)" class="delete">X</span>

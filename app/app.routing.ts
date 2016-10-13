@@ -12,7 +12,10 @@ const appRoutes: Routes = [
     },
     {
         path: 'todo/list',
-        component: TodoComponent
+        component: TodoComponent,
+        data: {
+            action: 'listTodo'
+        }
     }
 ];
 
